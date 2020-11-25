@@ -1,5 +1,4 @@
 import java.util.Arrays;
-
 public class rank {
     static int[] array = {2, 1, 4, 8, 9, 0, 3, 5, 6, 13};
 

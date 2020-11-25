@@ -5,14 +5,14 @@ import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
 import java.security.spec.InvalidKeySpecException;
 
-public class day1123 {
+public class demoDES {
     //秘钥
     static String key = "20201124";
     //数据
     static String data = "海上月是天上月，眼前人是心上人";
 
     public static void main(String[] args) {
-        day1123 DesCipher = new day1123();
+        demoDES DesCipher = new demoDES();
         byte[] dst = DesCipher.encrypt(key.getBytes(), data.getBytes());
         System.out.println(DesCipher.byteToString(dst));
         try {
@@ -106,7 +106,6 @@ public class day1123 {
      * @throws Exception
      */
     static public byte[] desOperation(byte[] key, byte[] data, int mode) throws Exception {
-
         DESKeySpec desKeySpec = new DESKeySpec(key);
         SecretKeyFactory factory = SecretKeyFactory.getInstance("DES");
         SecretKey secretKey = factory.generateSecret(desKeySpec);
@@ -116,7 +115,7 @@ public class day1123 {
         return cipher.doFinal(data);
     }
     //byte数组转String
-    public  String byteToString(byte[] bytes){
+    public static String byteToString(byte[] bytes){
         if (bytes==null||bytes.length==0){
             return"";
         }

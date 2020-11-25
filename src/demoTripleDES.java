@@ -1,15 +1,10 @@
-import com.sun.crypto.provider.DESKeyGenerator;
-import com.sun.crypto.provider.DESedeKeyGenerator;
-
 import javax.crypto.*;
 import javax.crypto.spec.DESedeKeySpec;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
-import java.security.SecureRandom;
-import java.security.Security;
 import java.security.spec.InvalidKeySpecException;
 
-public class day1124 {
+public class demoTripleDES {
     //秘钥
     static String key = "123456781234567812345678";
     //数据
@@ -17,8 +12,8 @@ public class day1124 {
 
 
     public static void main(String[] args) {
-        day1124 tripleDES = new day1124();
-        day1123 bytetoStringdemo = new day1123();
+        demoTripleDES tripleDES = new demoTripleDES();
+        demoDES bytetoStringdemo = new demoDES();
         byte[] dst = tripleDES.TripleDESencrypt(key.getBytes(), data.getBytes());
         byte[] origin = tripleDES.TripleDESOperation(key.getBytes(),dst,Cipher.DECRYPT_MODE);
         //byte类型与string的互转
